@@ -1,4 +1,4 @@
-# x-address-codec [![NPM](https://img.shields.io/npm/v/x-address-codec.svg)](https://npmjs.org/package/x-address-codec) [![Build Status](https://img.shields.io/travis/ripple/x-address-codec/master.svg)](https://travis-ci.org/ripple/x-address-codec) [![codecov.io](http://codecov.io/github/ripple/x-address-codec/coverage.svg?branch=master)](http://codecov.io/github/ripple/x-address-codec?branch=master)
+# d-address-codec [![NPM](https://img.shields.io/npm/v/d-address-codec.svg)](https://npmjs.org/package/d-address-codec) [![Build Status](https://img.shields.io/travis/xdv/d-address-codec/master.svg)](https://travis-ci.org/xdv/d-address-codec) [![codecov.io](http://codecov.io/github/xdv/d-address-codec/coverage.svg?branch=master)](http://codecov.io/github/xdv/d-address-codec?branch=master)
 
 This is a meta package, that exposes an api factory. It's really not as boring
 as it sounds. We only ask you bring your own hash
@@ -17,10 +17,12 @@ address strings to bytes and back. Thrilling right?
 We currently serve these alphabets. Make a pull request if you'd like to add one
 to the menu.
 
+* divvy
 * ripple
 * tipple
 * bitcoin
 * stellar
+* payshares
 
 # API
 
@@ -63,10 +65,10 @@ console.log(decoded);
 // [ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ]
 ```
 
-## We could actually encode the seed as a ripple one if we chose :)
+## We could actually encode the seed as a divvy one if we chose :)
 
 ```js
-console.log(api.encode(decoded, {alphabet: 'ripple', version: 33}));
+console.log(api.encode(decoded, {alphabet: 'divvy', version: 33}));
 // sp6JS7f14BuwFY8Mw6bTtLKWauoUs
 ```
 
@@ -101,6 +103,10 @@ console.log(api)
       { alphabet: '123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz',
         codec: [Object],
         base: 58 },
+     divvy:
+      { alphabet: 'dpshnaf39wBUDNEGHJKLM4PQRST7VWXYZ2bcreCg65jkm8oFqi1tuvAxyz',
+        codec: [Object],
+        base: 58 },
      ripple:
       { alphabet: 'rpshnaf39wBUDNEGHJKLM4PQRST7VWXYZ2bcdeCg65jkm8oFqi1tuvAxyz',
         codec: [Object],
@@ -111,6 +117,10 @@ console.log(api)
         base: 58 },
      stellar:
       { alphabet: 'gsphnaf39wBUDNEGHJKLM4PQRST7VWXYZ2bcdeCr65jkm8oFqi1tuvAxyz',
+        codec: [Object],
+        base: 58 } },
+     payshares:
+      { alphabet: 'xsphnaf39wBUDNEGHJKLM4PQRST7VWXYZ2bcdeCr65jkm8oFqi1tuvAgyz',
         codec: [Object],
         base: 58 } },
   decode: [Function: decode],

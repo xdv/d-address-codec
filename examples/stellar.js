@@ -33,8 +33,8 @@ console.log(reencoded);
 console.log(decoded);
 // [ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ]
 
-// We could actually encode the seed as a ripple one if we chose :)
-console.log(api.encode(decoded, {alphabet: 'ripple', version: 33}));
+// We could actually encode the seed as a divvy one if we chose :)
+console.log(api.encode(decoded, {alphabet: 'divvy', version: 33}));
 // sp6JS7f14BuwFY8Mw6bTtLKWauoUs
 
 // Wait, what if we wanted to create a prefix for the new nifty spaceMan secrets
@@ -57,16 +57,24 @@ console.log(api)
       { alphabet: '123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz',
         codec: [Object],
         base: 58 },
-     ripple: 
+     divvy:
+      { alphabet: 'dpshnaf39wBUDNEGHJKLM4PQRST7VWXYZ2bcreCg65jkm8oFqi1tuvAxyz',
+        codec: [Object],
+        base: 58 },
+     ripple:
       { alphabet: 'rpshnaf39wBUDNEGHJKLM4PQRST7VWXYZ2bcdeCg65jkm8oFqi1tuvAxyz',
         codec: [Object],
         base: 58 },
-     tipple: 
+     tipple:
       { alphabet: 'RPShNAF39wBUDnEGHJKLM4pQrsT7VWXYZ2bcdeCg65jkm8ofqi1tuvaxyz',
         codec: [Object],
         base: 58 },
-     stellar: 
+     stellar:
       { alphabet: 'gsphnaf39wBUDNEGHJKLM4PQRST7VWXYZ2bcdeCr65jkm8oFqi1tuvAxyz',
+        codec: [Object],
+        base: 58 } },
+     payshares:
+      { alphabet: 'xsphnaf39wBUDNEGHJKLM4PQRST7VWXYZ2bcdeCr65jkm8oFqi1tuvAgyz',
         codec: [Object],
         base: 58 } },
   decode: [Function: decode],

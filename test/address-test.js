@@ -38,21 +38,21 @@ const codecMethods = {
     expectedLength: 4
   }
 };
-const options = {sha256, defaultAlphabet: 'ripple', codecMethods};
+const options = {sha256, defaultAlphabet: 'divvy', codecMethods};
 const {
   decodeTest,
   encodeTest,
   isValidTest,
   encode,
   decode,
-  codecs: {ripple}
+  codecs: {divvy}
 } = apiFactory(options);
 
 describe('Codec', function() {
   describe('findPrefix', function() {
     it('can find the right version bytes to induce `sEd` for 16 byte payloads',
         function() {
-      const version = ripple.findPrefix('sEd', 16);
+      const version = divvy.findPrefix('sEd', 16);
 
       // Fill an array of 16 bytes
       const filled = _.fill(Array(16), 0xFF);
@@ -114,7 +114,7 @@ describe('apiFactory', function() {
     });
   });
   describe('encode', function() {
-    fixtures.ripple.forEach(test => {
+    fixtures.divvy.forEach(test => {
       it(`encodes "${test.hex}" to "${test.string}"`, function() {
         const encoded = encode(hexToByteArray(test.hex));
         assert.strictEqual(encoded, test.string);
@@ -136,7 +136,7 @@ describe('apiFactory', function() {
     });
   });
   describe('decode', function() {
-    fixtures.ripple.forEach(test => {
+    fixtures.divvy.forEach(test => {
       it(`decodes "${test.string}" to "${test.hex}"`, function() {
         const decoded = decode(test.string);
         assert.deepEqual(decoded, hexToByteArray(test.hex));
